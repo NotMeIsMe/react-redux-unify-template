@@ -1,7 +1,7 @@
-var log4js = require('log4js');
-log4js.configure('./src/log4j/log4j.json', { cwd: __dirname, reloadSecs: 300 });
+const log4js = require('log4js');
 
-var logger = log4js.getLogger();
+log4js.configure('./src/log4j/log4j.json', { cwd: __dirname, reloadSecs: 300 });
+const logger = log4js.getLogger();
 
 // logger.setLevel('ERROR');
 // logger.trace('Entering cheese testing');
