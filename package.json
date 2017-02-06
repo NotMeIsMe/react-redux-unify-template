@@ -1,0 +1,38 @@
+{
+  "name": "react-redux-unify-template",
+  "version": "0.1.0",
+  "description": "template for reactjs redux, unify",
+  "main": "src/server/server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://git.coding.net/haskell/KaFree.git"
+  },
+  "keywords": [
+    "express",
+    "react",
+    "redux",
+    "template",
+    "unify",
+    "node"
+  ],
+  "author": "黄建双",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/"
+  },
+  "homepage": "https://github.com/",
+  "scripts": {
+    "start": "npm run test && node src/server/server",
+    "server": "nodemon src/server/server",
+    "deploy": "npm run build && cross-env NODE_ENV=production PORT=80 npm run start",
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "test": "mocha --compilers js:babel-register --reporter progress tools/testSetup.js src/**/*.spec.js ",
+    "eslint": "eslint .",
+    "jscs": "jscs .",
+    "urgency": "mocha --compilers js:babel-register --reporter progress tools/testSetup.js src/**/test.spec.js "
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
