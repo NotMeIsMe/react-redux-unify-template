@@ -1,17 +1,18 @@
 'use strict';
-
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StatsPlugin = require('stats-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const wtc = require('./webpack.iso.config');
+const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
+
+const WebpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(wtc).development();
 
 module.exports = {
   context: path.join(__dirname, '../'),
   entry: {
-    shop: path.join(__dirname, '../src/entry/shop/shop.js'),
-    manage: path.join(__dirname, '../src/entry/manage/manage.js'),
+    client: path.join(__dirname, '../src/client.js')
   },
   output: {
     path: path.join(__dirname, '../dist/'),
@@ -20,18 +21,6 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new HtmlWebpackPlugin({
-      template: 'src/template.html',
-      inject: 'body',
-      chunks: ['shop'],
-      filename: 'shop.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: 'src/template.html',
-      inject: 'body',
-      chunks: ['manage'],
-      filename: 'manage.html'
-    }),
     new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
@@ -47,24 +36,33 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new CopyWebpackPlugin([
-        { from: 'static' }
-    ])
+      { from: 'static' }
+    ]),
+    WebpackIsomorphicTools
   ],
   module: {
     loaders: [
       { test: /\.(png|jpg|gif|ico)$/, loader: 'file-loader?name=img/img-[hash:6].[ext]' },
       { test: /\.(ogg|webm|mp4|swf|wav|mp3)$/, loader: 'file-loader?name=play/play-[hash:6].[ext]' },
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel',
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
         query: {
-          'presets': ['es2015', 'stage-0', 'react'],
-          'plugins': [['import', [{ 'libraryName': 'antd', 'libraryDirectory': 'lib', 'style': 'css' }]]]
+          presets: ['es2015', 'stage-0', 'react'],
+          plugins: ['transform-decorators-legacy']
         }
       },
       { test: /\.json?$/, loader: 'json' },
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]') }
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]') }
     ]
   },
-  postcss: [
-    require('autoprefixer')
-  ]
+  progress: true,
+  resolve: {
+    modulesDirectories: [
+      'src',
+      'node_modules'
+    ],
+    extensions: ['', '.json', '.js', '.jsx']
+  }
 };

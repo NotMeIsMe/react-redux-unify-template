@@ -33,16 +33,12 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        presets: [
-          'es2015',
-          'stage-0',
-          'react',
-          'react-hmre'
-        ],
-        plugins: [
-          'transform-decorators-legacy'
-        ]
+        query: {
+          presets: ['es2015', 'stage-0', 'react'],
+          plugins: ['transform-decorators-legacy']
+        }
       },
+      { test: /\.json?$/, loader: 'json' },
       { test: /\.less$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!less?outputStyle=expanded&sourceMap' },
       { test: /\.scss$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap' },
       { test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]' }

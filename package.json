@@ -24,9 +24,10 @@
   "scripts": {
     "eslint": "eslint -c .eslintrc src api bin",
     "dev": "concurrent --kill-others \"better-npm-run watch-client\" \"npm run start-dev\"",
+    "pro": "npm run build && npm run start-pro",
     "start-dev": "better-npm-run start:dev",
-    "build:prod": "better-npm-run build:prod",
-    "start": "node bin/main",
+    "start-pro": "better-npm-run start:pro",
+    "build": "webpack --config webpack/webpack.pro.config --progress --colors",
     "test": "better-npm-run test"
   },
   "betterScripts": {
@@ -38,10 +39,12 @@
         "PORT": 3000
       }
     },
-    "build:prod": {
-      "command": "webpack --config webpack/webpack.pro.config --progress --colors",
+    "start:pro": {
+      "command": "node bin/main",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "HOST": "127.0.0.1",
+        "PORT": 8080
       }
     },
     "watch-client": {
@@ -94,7 +97,9 @@
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-react": "^6.9.0",
     "eslint-plugin-standard": "^2.0.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.10.0",
+    "stats-webpack-plugin": "^0.4.3",
     "style-loader": "^0.13.1"
   }
 }
