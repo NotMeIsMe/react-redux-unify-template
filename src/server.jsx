@@ -12,7 +12,7 @@ import Html from './template';
 
 const app = express();
 
-function htmlServerRender(routes, rdc, req, res, jskey) {
+function htmlServerRender (routes, rdc, req, res, jskey) {
   if (!config.isProduction) WebpackIsomorphicTools.refresh();
   const store = createStore(rdc);
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
@@ -32,7 +32,6 @@ function htmlServerRender(routes, rdc, req, res, jskey) {
     }
   });
 }
-
 
 app.get('*', (req, res) => {
   htmlServerRender(TestRoutes, TestReducers, req, res, 'phone');

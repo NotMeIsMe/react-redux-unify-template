@@ -3,13 +3,7 @@ import ReactDOM from 'react-dom/server';
 import serialize from 'serialize-javascript';
 
 export default class Html extends Component {
-  static propTypes = {
-    assets: PropTypes.object,
-    component: PropTypes.object,
-    store: PropTypes.object,
-    jskey: PropTypes.string,
-  };
-  render() {
+  render () {
     const { assets, jskey, component, store } = this.props;
     const icon = require('./containers/favicon.ico');
     const content = ReactDOM.renderToString(component);
@@ -36,3 +30,9 @@ export default class Html extends Component {
   }
 }
 
+Html.propTypes = {
+  assets: PropTypes.object,
+  component: PropTypes.object,
+  store: PropTypes.object,
+  jskey: PropTypes.string
+};

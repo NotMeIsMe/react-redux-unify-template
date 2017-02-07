@@ -33,6 +33,6 @@ module.exports = Object.assign({
         { property: 'og:image:height', content: '200' }
       ]
     }
-  },
+  }
 
 }, environment);

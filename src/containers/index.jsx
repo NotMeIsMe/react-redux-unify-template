@@ -2,7 +2,7 @@ import React from 'react';
 import './favicon.ico';
 
 class Index extends React.Component {
-  render() {
+  render () {
     return (
       <div className="containter">
         { this.props.children }
@@ -12,7 +12,7 @@ class Index extends React.Component {
 }
 
 Index.propTypes = {
-  children: React.PropTypes.object.isRequired,
+  children: React.PropTypes.object.isRequired
 };
 
 export default Index;
