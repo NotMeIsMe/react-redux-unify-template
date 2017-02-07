@@ -4,7 +4,7 @@ import './favicon.ico';
 class Index extends React.Component {
   render () {
     return (
-      <div className="containter">
+      <div>
         { this.props.children }
       </div>
     );
