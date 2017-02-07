@@ -15,10 +15,7 @@ export default class Html extends Component {
           <meta name="description" content="react-redux-unify-template"/>
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
           <link rel="react-redux-unify-template" href={icon}/>
-          {
-            Object.keys(assets.styles)
-            .map((style, i) => <link href={assets.styles[style]} key={i} media="screen, projection" rel="stylesheet" type="text/css"/>)
-          }
+          <link href={assets.styles[jskey]} key={jskey} media="screen, projection" rel="stylesheet" type="text/css"/>
         </head>
         <body>
           <div id="root" dangerouslySetInnerHTML={{ __html: content }}/>
