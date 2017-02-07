@@ -7,4 +7,4 @@ const wic = require('../webpack/webpack.isomorphic.config');
 
 // 全局变量
 global.WebpackIsomorphicTools = new WebpackIsomorphicTools(wic)
-.server(context, () => require('./server'));
+.server(context, () => require('../src/server'));

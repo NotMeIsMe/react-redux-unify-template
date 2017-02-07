@@ -2,8 +2,6 @@ import React, { PropTypes, Component } from 'react';
 import ReactDOM from 'react-dom/server';
 import serialize from 'serialize-javascript';
 
-var a;
-
 export default class Html extends Component {
   static propTypes = {
     assets: PropTypes.object,
@@ -13,16 +11,16 @@ export default class Html extends Component {
   };
   render() {
     const { assets, jskey, component, store } = this.props;
-    const content = ReactDOM.renderToString(component);
     const icon = require('./favicon.ico');
+    const content = ReactDOM.renderToString(component);
     const html =
     (<html lang="zh-CN">
         <head>
           <meta charSet="utf-8"/>
-          <title>佧云-服务美好生活</title>
-          <meta name="description" content="服务美好生活"/>
+          <title>react-redux-unify-template</title>
+          <meta name="description" content="react-redux-unify-template"/>
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-          <link rel="佧云" href={icon} />
+          <link rel="react-redux-unify-template" href={icon}/>
           {
             Object.keys(assets.styles)
             .map((style, i) => <link href={assets.styles[style]} key={i} media="screen, projection" rel="stylesheet" type="text/css"/>)

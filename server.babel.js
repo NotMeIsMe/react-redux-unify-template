@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const packageJson = fs.readFileSync('./package.json');
 let config;
 try {

@@ -6,6 +6,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../src/config.js');
 const logger = require('../src/log4j/log4j.js');
 const webpackConfig = require('./webpack.dev.config.js');
+
 const app = new Express();
 const compiler = webpack(webpackConfig);
 const middleware = webpackMiddleware(compiler, {
@@ -29,7 +30,7 @@ const middleware = webpackMiddleware(compiler, {
 app.use(middleware);
 app.use(webpackHotMiddleware(compiler));
 
-app.listen(`${config.devPort}`, function onAppListening(err) {
+app.listen(`${config.devPort}`, (err) => {
   if (err) logger.error(err);
   logger.info('Webpack development server listening on port %s', `${config.devPort}`);
 });
