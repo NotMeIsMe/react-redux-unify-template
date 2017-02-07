@@ -11,7 +11,7 @@ export default class Html extends Component {
   };
   render() {
     const { assets, jskey, component, store } = this.props;
-    const icon = require('./favicon.ico');
+    const icon = require('./containers/favicon.ico');
     const content = ReactDOM.renderToString(component);
     const html =
     (<html lang="zh-CN">
