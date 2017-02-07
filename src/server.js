@@ -34,7 +34,7 @@ function htmlServerRender (routes, rdc, req, res, jskey) {
 }
 
 app.get('*', (req, res) => {
-  htmlServerRender(TestRoutes, TestReducers, req, res, 'phone');
+  htmlServerRender(TestRoutes, TestReducers, req, res, 'client');
 });
 
 app.listen(config.port, (err) => {

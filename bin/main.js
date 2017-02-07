@@ -3,7 +3,7 @@ require('../server.babel');
 
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 const context = require('path').resolve(__dirname, '../');
-const wic = require('../webpack/webpack.isomorphic.config');
+const wic = require('../webpack/webpack.iso.config');
 
 // 全局变量
 global.WebpackIsomorphicTools = new WebpackIsomorphicTools(wic)

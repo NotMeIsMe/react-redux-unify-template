@@ -20,8 +20,8 @@ export default class Html extends Component {
             .map((style, i) => <link href={assets.styles[style]} key={i} media="screen, projection" rel="stylesheet" type="text/css"/>)
           }
         </head>
-        <body className="fullWidth">
-          <div className="fullWidth" id="root" dangerouslySetInnerHTML={{__html: content }}/>
+        <body>
+          <div id="root" dangerouslySetInnerHTML={{ __html: content }}/>
           <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} />
           <script src={assets.javascript[jskey]} key={jskey}/>
         </body>

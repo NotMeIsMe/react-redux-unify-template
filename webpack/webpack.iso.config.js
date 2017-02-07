@@ -20,7 +20,7 @@ module.exports = {
       },
       parser: (module, options, log) => {
         return options.development ? WebpackIsomorphicToolsPlugin.css_modules_loader_parser(module, options, log) : module.source;
-      },
+      }
     }
   }
 };

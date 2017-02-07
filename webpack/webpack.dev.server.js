@@ -24,7 +24,7 @@ const middleware = webpackMiddleware(compiler, {
     timings: true,
     chunks: false,
     modules: false,
-    chunkModules: false,
+    chunkModules: false
   }
 });
 app.use(middleware);

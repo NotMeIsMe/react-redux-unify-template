@@ -39,7 +39,7 @@
       }
     },
     "build:prod": {
-      "command": "webpack --config $npm_package_webpack --progress --colors",
+      "command": "webpack --config webpack/webpack.pro.config --progress --colors",
       "env": {
         "NODE_ENV": "production"
       }
@@ -58,16 +58,6 @@
         "NODE_ENV": "test"
       }
     }
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0",
-      "react"
-    ],
-    "plugins": [
-      "transform-decorators-legacy"
-    ]
   },
   "dependencies": {
     "babel-register": "^6.22.0",

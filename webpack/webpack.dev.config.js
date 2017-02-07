@@ -1,9 +1,7 @@
-
-
 const path = require('path');
 const webpack = require('webpack');
 const config = require('../src/config.js');
-const wtc = require('./webpack.isomorphic.config');
+const wtc = require('./webpack.iso.config');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
@@ -13,17 +11,17 @@ module.exports = {
   devtool: 'inline-source-map',
   context: path.join(__dirname, '../'),
   entry: {
-    client: [`webpack-hot-middleware/client?reload=true&path=http://${config.host}:${config.devPort}/__webpack_hmr`, path.join(__dirname, '../src/client.jsx')],
+    client: [`webpack-hot-middleware/client?reload=true&path=http://${config.host}:${config.devPort}/__webpack_hmr`, path.join(__dirname, '../src/client.js')]
   },
   output: {
     path: path.join(__dirname, '../dist/'),
-    filename: '[name].js',
+    filename: '[name]-[hash].js',
     publicPath: `http://${config.host}:${config.devPort}/`
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
-        { from: 'static' }
+      { from: 'static' }
     ]),
     WebpackIsomorphicTools
   ],
@@ -31,19 +29,23 @@ module.exports = {
     loaders: [
       { test: /\.(png|jpg|gif|ico)$/, loader: 'file-loader?name=img/img-[hash:6].[ext]' },
       { test: /\.(ogg|webm|mp4|swf|wav|mp3)$/, loader: 'file-loader?name=voice/voice-[hash:6].[ext]' },
-      { test: /\.jsx?$/,
+      {
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-0', 'react-hmre']
-        },
+        presets: [
+          'es2015',
+          'stage-0',
+          'react',
+          'react-hmre'
+        ],
         plugins: [
           'transform-decorators-legacy'
         ]
       },
       { test: /\.less$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!less?outputStyle=expanded&sourceMap' },
       { test: /\.scss$/, loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded&sourceMap' },
-      { test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[local]' }
+      { test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[local]___[hash:base64:5]' }
     ]
   },
   progress: true,
