@@ -11,6 +11,9 @@ class NavBar extends Component {
   render () {
     return <div className={styles.navbarWrap}>
               <div className={styles.navbarContent}>
+                {
+                  this.props.contents[this.state.sindex]
+                }
               </div>
               <div className={styles.navbarBottom}>
                 {
