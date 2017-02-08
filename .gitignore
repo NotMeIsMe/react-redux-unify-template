@@ -1,8 +1,9 @@
 .idea/
 node_modules/
 dist/
+log/
 *.iml
 webpack-assets.json
 webpack-stats.json
-npm-debug.log
+*.log
 *.swp

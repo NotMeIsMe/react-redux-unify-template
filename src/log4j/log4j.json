@@ -1,14 +1,14 @@
 {
   "appenders": [
     {
-      "type": "file",
-      "filename": "../../log/log_file.log",
-      "maxLogSize": 20480,
-      "backups": 10,
-      "category": "relative-logger"
+      "type": "console"
     },
     {
-      "type": "console"
+      "type": "file",
+      "filename": "./log/log_file.log",
+      "maxLogSize": 20480,
+      "backups": 10,
+      "category": "react-redux-unify-template"
     }
   ]
 }

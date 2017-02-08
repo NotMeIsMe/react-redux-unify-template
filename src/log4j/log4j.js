@@ -1,8 +1,8 @@
 const log4js = require('log4js');
 
-log4js.configure('./src/log4j/log4j.json', { cwd: __dirname, reloadSecs: 300 });
-const logger = log4js.getLogger();
-
+log4js.configure('./src/log4j/log4j.json', { reloadSecs: 300 });
+const logger = log4js.getLogger('react-redux-unify-template');
+logger.setLevel('debug');
 // logger.setLevel('ERROR');
 // logger.trace('Entering cheese testing');
 // logger.debug('Got cheese.');
