@@ -14,8 +14,29 @@
     float: left;
     margin-top: 5px;
 }
-
+.messages {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin-top: -40px;
+    margin-right: 5px;
+}
+.count {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #a00;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
 .arrowsPic {
+    width: 100%;
+    height: 100%;
+}
+.messagesPic {
     width: 100%;
     height: 100%;
 }

@@ -7,7 +7,7 @@ import styles from './home.css';
 class Home extends React.Component {
   render () {
     return <div className={styles.home}>
-              <ToolBar title="App" onclick={() => { console.log('back'); }}/>
+              <ToolBar count={2} title="App" onLclick={() => { console.log('back'); }} onRclick={() => { console.log('mess'); }}/>
                 <NavBar contents={[<Hello />,
                   <div></div>
                 ]} navcontents={[{
