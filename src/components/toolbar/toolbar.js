@@ -19,6 +19,5 @@ ToolBar.propTypes = {
   onclick: PropTypes.func
 };
 
-
 export default ToolBar;
 
