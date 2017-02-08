@@ -23,7 +23,7 @@ class NavBar extends Component {
                           this.setState({ sindex: k });
                         }} style={{
                           backgroundColor: this.state.sindex === k ? '#666' : 'transparent'
-                        }}>
+                        }} key={k}>
                             <img src={obj.ico} alt={obj.subtitle}/>
                             <span>{obj.subtitle}</span>
                         </div>
