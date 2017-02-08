@@ -2,14 +2,16 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './hello.css';
 import { loadUser } from '../../redux/test/actions';
+import Loading from '../loading/load';
 
 class Hello extends Component {
   render () {
     return <div className={ styles.hello }>
+            <Loading toClose={!this.props.isFetching}/>
             <button onClick={() => {
               this.props.loadUser(2012);
             }}>async</button>
-            <h3>{ this.props.isFetching ? <span>isFetching for 2012...</span> : <pre>{ JSON.stringify(this.props.user)}</pre> }</h3>
+            <h3> { this.props.isFetching ? <span>isFetching for 2012...</span> : <pre>{ JSON.stringify(this.props.user)}</pre> }</h3>
             { this.props.errorMessage && <div className="error">errorMessage</div> }
           </div>;
   }
