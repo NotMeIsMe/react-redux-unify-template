@@ -1,5 +1,6 @@
 import path from 'path';
 import express from 'express';
+import device from 'express-device';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
@@ -12,6 +13,7 @@ import config from './config';
 import Html from './template';
 
 const app = express();
+app.use(device.capture());
 app.use(express.static(path.join(__dirname, '../dist')));
 
 function htmlServerRender (routes, rdc, req, res, jskey) {
@@ -30,13 +32,21 @@ function htmlServerRender (routes, rdc, req, res, jskey) {
       );
       res.status(200).send(`<!doctype html>\n${renderToString(<Html assets={WebpackIsomorphicTools.assets()} jskey={jskey} component={component} store={store} />)}`);
     } else {
-      res.status(404).send('Not found');
+      if (!config.isProduction) {
+        res.redirect(301, `http://${config.host}:${config.devPort}/mobile/404.html`);
+      } else {
+        res.status(404).sendFile(path.join(__dirname, '../dist/mobile/404.html'));
+      }
     }
   });
 }
 
 app.get('*', (req, res) => {
-  htmlServerRender(TestRoutes, TestReducers, req, res, 'client');
+  if (req.device.type === 'phone') {
+    htmlServerRender(TestRoutes, TestReducers, req, res, 'client');
+  } else {
+    res.status(404).send('undefined');
+  }
 });
 
 app.listen(config.port, (err) => {

@@ -1,0 +1,47 @@
+html, body {
+   margin: 0px;
+   padding: 0xp;
+   height: 100%;
+} 
+
+.container {
+	/*background-color: #909;*/
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.container div {
+	width: 300px;
+	height: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -150px;
+}
+
+
+.container img.not-find-pic {
+	width: 100%;
+	height: 100%;
+}
+
+.container div button.btn-back{
+	width: 100px;
+	height: 40px;
+	border: none;
+	outline: none;
+	line-height: 40px;
+	font-size: 17px;
+	color: #fff;
+	background-color: #FF5400;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.container div button.btn-back:hover{
+	background-color: #FF4400;
+}
+
+
