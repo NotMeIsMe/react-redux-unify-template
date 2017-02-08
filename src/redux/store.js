@@ -6,6 +6,8 @@ import { composeWithDevTools as composeWithDevToolsPro } from 'redux-devtools-ex
 import reducers from './reducer';
 import config from '../config';
 
+// asyncMiddleware:
+// resolve when any prop is a promise middleware for Redux.
 const enhancersDev = composeWithDevToolsDev(
   applyMiddleware(asyncMiddleware)
   // other store enhancers if any
