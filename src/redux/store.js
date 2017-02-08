@@ -1,16 +1,19 @@
 import { createStore, applyMiddleware } from 'redux';
+import asyncMiddleware from 'redux-async';
 import { composeWithDevTools as composeWithDevToolsDev } from 'redux-devtools-extension';
 import { composeWithDevTools as composeWithDevToolsPro } from 'redux-devtools-extension/logOnlyInProduction';
 import reducers from './reducer';
 import config from '../config';
 
+const middlewares = [asyncMiddleware];
+
 const enhancersDev = composeWithDevToolsDev(
-  applyMiddleware(/*...middleware*/)
+  applyMiddleware(...middlewares)
   // other store enhancers if any
 );
 
 const enhancersPro = composeWithDevToolsPro(
-  applyMiddleware(/*...middleware*/)
+  applyMiddleware(...middlewares)
   // other store enhancers if any
 );
 
