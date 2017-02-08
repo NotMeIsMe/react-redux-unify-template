@@ -1,24 +1,23 @@
 import { createStore, applyMiddleware } from 'redux';
 import asyncMiddleware from 'redux-async';
+// import thunk from 'redux-thunk';
 import { composeWithDevTools as composeWithDevToolsDev } from 'redux-devtools-extension';
 import { composeWithDevTools as composeWithDevToolsPro } from 'redux-devtools-extension/logOnlyInProduction';
 import reducers from './reducer';
 import config from '../config';
 
-const middlewares = [asyncMiddleware];
-
 const enhancersDev = composeWithDevToolsDev(
-  applyMiddleware(...middlewares)
+  applyMiddleware(asyncMiddleware)
   // other store enhancers if any
 );
 
 const enhancersPro = composeWithDevToolsPro(
-  applyMiddleware(...middlewares)
+  applyMiddleware(asyncMiddleware)
   // other store enhancers if any
 );
 
 function buildStore (initState) {
-  const store = createStore(reducers, config.isProduction ? enhancersPro : enhancersDev, initState);
+  const store = createStore(reducers, initState, config.isProduction ? enhancersPro : enhancersDev);
   return store;
 }
 
