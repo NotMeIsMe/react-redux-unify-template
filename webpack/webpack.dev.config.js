@@ -12,6 +12,7 @@ module.exports = {
   context: path.join(__dirname, '../'),
   entry: {
     client: [`webpack-hot-middleware/client?reload=true&path=http://${config.host}:${config.devPort}/__webpack_hmr`, path.join(__dirname, '../src/client.js')]
+    // vendor: ['onsenui']
   },
   output: {
     path: path.join(__dirname, '../dist/'),
@@ -19,6 +20,7 @@ module.exports = {
     publicPath: `http://${config.host}:${config.devPort}/`
   },
   plugins: [
+    // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
@@ -53,6 +55,8 @@ module.exports = {
   resolve: {
     modulesDirectories: [
       'src',
+      'bin',
+      'api',
       'node_modules'
     ],
     extensions: ['', '.json', '.js', '.jsx']

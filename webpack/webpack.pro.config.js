@@ -13,6 +13,7 @@ module.exports = {
   context: path.join(__dirname, '../'),
   entry: {
     client: path.join(__dirname, '../src/client.js')
+    // vendor: ['onsenui']
   },
   output: {
     path: path.join(__dirname, '../dist/'),
@@ -20,6 +21,7 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({
@@ -63,6 +65,8 @@ module.exports = {
   resolve: {
     modulesDirectories: [
       'src',
+      'bin',
+      'api',
       'node_modules'
     ],
     extensions: ['', '.json', '.js', '.jsx']

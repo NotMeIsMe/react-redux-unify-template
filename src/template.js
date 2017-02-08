@@ -15,6 +15,11 @@ export default class Html extends Component {
           <meta name="description" content="react-redux-unify-template"/>
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
           <link rel="react-redux-unify-template" href={icon}/>
+          <link rel="stylesheet" href="http://127.0.0.1:3001/css/onsenui.css"/>
+          <link rel="stylesheet" href="http://127.0.0.1:3001/css/onsen-css-components.css"/>
+          <link rel="stylesheet" href="http://127.0.0.1:3001/css/font_awesome/css/font-awesome.min.css"/>
+          <link rel="stylesheet" href="http://127.0.0.1:3001/css/ionicons/css/ionicons.min.css"/>
+          <link rel="stylesheet" href="http://127.0.0.1:3001/css/material-design-iconic-font/css/material-design-iconic-font.min.css"/>
           <link href={assets.styles[jskey]} key={jskey} media="screen, projection" rel="stylesheet" type="text/css"/>
         </head>
         <body>
