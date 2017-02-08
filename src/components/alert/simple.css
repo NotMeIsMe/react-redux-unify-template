@@ -1,0 +1,51 @@
+.simple {
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+.simple > div {
+    width: 240px; height: 180px;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 4px;
+    background-color:rgba(255,255,255,1);
+    padding: 2px;
+}
+
+.simple div > div:nth-child(1) {
+    height: 20%;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    line-height: 36px;
+    color: #666;
+}
+
+.simple div > div:nth-child(2) {
+    height: 55%;
+    text-align: center;
+}
+
+.simple div > div:nth-child(3) {
+    height: 25%;
+    border-top: 1px solid #eee;
+    overflow: hidden;
+}
+
+.simple div > div:nth-child(3) button {
+    height: 100%;
+    width: 50%;
+    outline: none;
+    border: none;
+    background-color: #eee;
+}
+
+.simple div > div:nth-child(3) button:nth-child(1) {
+    border-right: 1px solid #fff;
+}
