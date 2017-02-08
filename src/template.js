@@ -4,7 +4,7 @@ import serialize from 'serialize-javascript';
 
 export default class Html extends Component {
   render () {
-    const { assets, jskey, component, store } = this.props;
+    const { assets, component, store } = this.props;
     const icon = require('./containers/favicon.ico');
     const content = ReactDOM.renderToString(component);
     const html =
@@ -15,17 +15,17 @@ export default class Html extends Component {
           <meta name="description" content="react-redux-unify-template"/>
           <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
           <link rel="react-redux-unify-template" href={icon}/>
-          <link rel="stylesheet" href="http://127.0.0.1:3001/css/onsenui/onsenui.css"/>
-          <link rel="stylesheet" href="http://127.0.0.1:3001/css/onsenui/onsen-css-components.css"/>
-          <link rel="stylesheet" href="http://127.0.0.1:3001/css/onsenui/font_awesome/css/font-awesome.min.css"/>
-          <link rel="stylesheet" href="http://127.0.0.1:3001/css/onsenui/ionicons/css/ionicons.min.css"/>
-          <link rel="stylesheet" href="http://127.0.0.1:3001/css/onsenui/material-design-iconic-font/css/material-design-iconic-font.min.css"/>
-          <link href={assets.styles[jskey]} key={jskey} media="screen, projection" rel="stylesheet" type="text/css"/>
+          {Object.keys(assets.styles).map((style, key) =>
+            <link href={assets.styles[style]} key={key} media="screen, projection"
+                  rel="stylesheet" type="text/css" charSet="UTF-8"/>
+          )}
         </head>
         <body>
           <div id="root" dangerouslySetInnerHTML={{ __html: content }}/>
           <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} />
-          <script src={assets.javascript[jskey]} key={jskey}/>
+          {Object.keys(assets.javascript).map((javascript, key) =>
+            <script src={assets.javascript[javascript]} key={key} charSet="UTF-8"/>
+          )}
         </body>
       </html>);
     return html;

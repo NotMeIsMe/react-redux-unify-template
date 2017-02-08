@@ -30,7 +30,7 @@ function htmlServerRender (routes, rdc, req, res, jskey) {
           <RouterContext {...renderProps} />
         </Provider>
       );
-      res.status(200).send(`<!doctype html>\n${renderToString(<Html assets={WebpackIsomorphicTools.assets()} jskey={jskey} component={component} store={store} />)}`);
+      res.status(200).send(`<!doctype html>\n${renderToString(<Html assets={WebpackIsomorphicTools.assets()} component={component} store={store} />)}`);
     } else {
       if (!config.isProduction) {
         res.redirect(301, `http://${config.host}:${config.devPort}/mobile/404.html`);
