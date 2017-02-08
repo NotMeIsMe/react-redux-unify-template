@@ -27,7 +27,7 @@
     "pro": "npm run build && npm run start-pro",
     "start-dev": "better-npm-run start:dev",
     "start-pro": "better-npm-run start:pro",
-    "build": "webpack --config webpack/webpack.pro.config --progress --colors",
+    "build": "rimraf dist && webpack --config webpack/webpack.pro.config --progress --colors",
     "test": "better-npm-run test"
   },
   "betterScripts": {
@@ -101,6 +101,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.10.0",
+    "rimraf": "^2.5.4",
     "stats-webpack-plugin": "^0.4.3",
     "style-loader": "^0.13.1"
   }

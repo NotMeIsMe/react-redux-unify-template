@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -11,6 +12,7 @@ import config from './config';
 import Html from './template';
 
 const app = express();
+app.use(express.static(path.join(__dirname, '../dist')));
 
 function htmlServerRender (routes, rdc, req, res, jskey) {
   if (!config.isProduction) WebpackIsomorphicTools.refresh();
@@ -26,9 +28,9 @@ function htmlServerRender (routes, rdc, req, res, jskey) {
           <RouterContext {...renderProps} />
         </Provider>
       );
-      res.send(`<!doctype html>\n${renderToString(<Html assets={global.WebpackIsomorphicTools.assets()} jskey={jskey} component={component} store={store} />)}`);
+      res.status(200).send(`<!doctype html>\n${renderToString(<Html assets={WebpackIsomorphicTools.assets()} jskey={jskey} component={component} store={store} />)}`);
     } else {
-      res.send(404, 'Not found');
+      res.status(404).send('Not found');
     }
   });
 }

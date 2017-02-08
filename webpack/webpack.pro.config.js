@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const wtc = require('./webpack.iso.config');
 const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
-const WebpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(wtc).development();
+const WebpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(wtc);
 
 module.exports = {
   context: path.join(__dirname, '../'),

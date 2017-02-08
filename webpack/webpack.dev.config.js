@@ -7,8 +7,6 @@ const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
 const WebpackIsomorphicTools = new WebpackIsomorphicToolsPlugin(wtc).development();
 
-console.log('isProduction2 = ', process.env.NODE_ENV);
-
 module.exports = {
   devtool: 'inline-source-map',
   context: path.join(__dirname, '../'),
