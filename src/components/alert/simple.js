@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
 import styles from './simple.css';
 
-class Simple extends Component {
+class Simple extends React.Component {
   render () {
     return <div className={styles.simple} style={{
       display: (this.props.toClose === undefined || this.props.toClose === false) ? 'block' : 'none'
@@ -23,10 +23,10 @@ class Simple extends Component {
 }
 
 Simple.propTypes = {
-  toClose: PropTypes.bool,
-  onLclick: PropTypes.func,
-  onRclick: PropTypes.func,
-  content: PropTypes.string
+  toClose: React.PropTypes.bool,
+  onLclick: React.PropTypes.func,
+  onRclick: React.PropTypes.func,
+  content: React.PropTypes.string
 };
 
 export default Simple;

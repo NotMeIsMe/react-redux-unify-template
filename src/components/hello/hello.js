@@ -1,10 +1,10 @@
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import styles from './hello.css';
 import { loadUser } from '../../redux/test/actions';
 import Loading from '../loading/load';
 
-class Hello extends Component {
+class Hello extends React.Component {
   render () {
     return <div className={ styles.hello }>
             <Loading toClose={!this.props.isFetching}/>
@@ -18,11 +18,11 @@ class Hello extends Component {
 }
 
 Hello.propTypes = {
-  user: PropTypes.object,
-  isFetching: PropTypes.bool,
-  uid: PropTypes.number,
-  errorMessage: PropTypes.string,
-  loadUser: PropTypes.func.isRequired
+  user: React.PropTypes.object,
+  isFetching: React.PropTypes.bool,
+  uid: React.PropTypes.number,
+  errorMessage: React.PropTypes.string,
+  loadUser: React.PropTypes.func.isRequired
 };
 
 function mapStateToProps (state) {

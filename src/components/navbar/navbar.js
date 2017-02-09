@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
 import styles from './navbar.css';
 
-class NavBar extends Component {
+class NavBar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -36,8 +36,8 @@ class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-  contents: PropTypes.array,
-  navcontents: PropTypes.array
+  contents: React.PropTypes.array,
+  navcontents: React.PropTypes.array
 };
 
 export default NavBar;

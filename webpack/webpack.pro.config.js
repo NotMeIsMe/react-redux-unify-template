@@ -36,7 +36,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: `'${process.env.NODE_ENV}'`
+        NODE_ENV: JSON.stringify('production')
       }
     }),
     new CopyWebpackPlugin([
@@ -54,7 +54,7 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'stage-0', 'react'],
-          plugins: ['transform-decorators-legacy']
+          plugins: ['transform-react-remove-prop-types', 'transform-decorators-legacy']
         }
       },
       { test: /\.json?$/, loader: 'json' },

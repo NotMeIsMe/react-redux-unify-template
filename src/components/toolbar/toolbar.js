@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
 import styles from './toolbar.css';
 
-class ToolBar extends Component {
+class ToolBar extends React.Component {
   render () {
     return <div className={styles.toolBarWrap}>
               <div className={styles.arrows} onClick={this.props.onLclick}>
@@ -21,10 +21,10 @@ class ToolBar extends Component {
 }
 
 ToolBar.propTypes = {
-  title: PropTypes.string,
-  onLclick: PropTypes.func,
-  onRclick: PropTypes.func,
-  count: PropTypes.number
+  title: React.PropTypes.string,
+  onLclick: React.PropTypes.func,
+  onRclick: React.PropTypes.func,
+  count: React.PropTypes.number
 };
 
 export default ToolBar;

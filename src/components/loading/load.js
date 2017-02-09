@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
 import styles from './load.css';
 
-class Loading extends Component {
+class Loading extends React.Component {
   render () {
     return <div className={styles.loadData} style={{
       display: (this.props.toClose === undefined || this.props.toClose === false) ? 'block' : 'none'
@@ -14,7 +14,7 @@ class Loading extends Component {
 }
 
 Loading.propTypes = {
-  toClose: PropTypes.bool
+  toClose: React.PropTypes.bool
 };
 
 export default Loading;
