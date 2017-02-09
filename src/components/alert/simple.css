@@ -31,6 +31,7 @@
     height: 55%;
     text-align: center;
     line-height: 90px;
+    color: #444;
 }
 
 .simple div > div:nth-child(3) {
