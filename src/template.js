@@ -22,8 +22,8 @@ export default class Html extends Component {
         </head>
         <body>
           <div id="root" dangerouslySetInnerHTML={{ __html: content }}/>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+          {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script> */}
+          {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script> */}
           <script dangerouslySetInnerHTML={{__html: `window.__data=${serialize(store.getState())};`}} />
           {Object.keys(assets.javascript).map((javascript, key) =>
             <script src={assets.javascript[javascript]} key={key} charSet="UTF-8"/>

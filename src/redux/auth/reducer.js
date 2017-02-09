@@ -11,7 +11,6 @@ const initialState = {};
 export default createReducer(initialState, {
   [GET_USERS_REQUEST] (state, action) {
     const { uid } = action.payload;
-
     return { isFetching: true, uid };
   },
   [GET_USERS_SUCCESS] (state, action) {

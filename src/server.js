@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import logger from './log4j/log4j';
 import TestReducers from './redux/reducer';
-import TestRoutes from './routes';
+import buildRoutes from './routes';
 import config from './config';
 import Html from './template';
 
@@ -16,9 +16,20 @@ const app = express();
 app.use(device.capture());
 app.use(express.static(path.join(__dirname, '../dist')));
 
-function htmlServerRender (routes, rdc, req, res, jskey) {
+// 默认初始化state
+const initState = {
+  auth: {
+    user2: {}
+  },
+  test: {}
+};
+
+function htmlServerRender (buildRoutes, rdc, req, res, jskey) {
   if (!config.isProduction) WebpackIsomorphicTools.refresh();
-  const store = createStore(rdc);
+
+  const store = createStore(rdc, initState);
+  const routes = buildRoutes(store);
+
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
       res.send(500, error.message);
@@ -43,7 +54,7 @@ function htmlServerRender (routes, rdc, req, res, jskey) {
 
 app.get('*', (req, res) => {
   if (req.device.type === 'phone') {
-    htmlServerRender(TestRoutes, TestReducers, req, res, 'client');
+    htmlServerRender(buildRoutes, TestReducers, req, res, 'client');
   } else {
     res.status(404).send('undefined');
   }
