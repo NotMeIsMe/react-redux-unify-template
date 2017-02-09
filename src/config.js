@@ -1,3 +1,4 @@
+// app 运行环境配置
 const environment = {
   development: {
     isProduction: false
@@ -6,6 +7,21 @@ const environment = {
     isProduction: true
   }
 }[process.env.NODE_ENV];
+
+// 用户webpack的cdn配置
+const externals = {
+  development: {
+    externals: {
+    }
+  },
+  production: {
+    externals: {
+      react: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js',
+      reactDom: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js'
+    }
+  }
+}[process.env.NODE_ENV];
+
 
 module.exports = Object.assign({
   host: process.env.HOST,
@@ -35,4 +51,4 @@ module.exports = Object.assign({
     }
   }
 
-}, environment);
+}, environment, externals);

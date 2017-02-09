@@ -9,12 +9,12 @@ export default (store) => {
     const state = store.getState();
     const user = state.auth && state.auth.user;
     if (!user) {
-      // oops, not logged in, so can't be here!
-      replace('/');
+      replace('/?');
     }
     cb();
   };
-
+  // onEnter 的使用技巧
+  // https://github.com/ReactTraining/react-router/blob/master/docs/API.md
   return <Route path="/" component={Index}>
               <IndexRoute component={Home} />
               <Route onEnter={requireLogin}>
