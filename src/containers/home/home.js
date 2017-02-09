@@ -9,18 +9,18 @@ class Home extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      closeAlert: true
+      cbDialog: true
     };
   }
   render () {
     return <div className={styles.home}>
-                <Simple toClose={this.state.closeAlert} onLclick={() => {
-                  this.setState({ closeAlert: true });
+                <Simple toClose={this.state.cbDialog} onLclick={() => {
+                  this.setState({ cbDialog: true });
                 }} onRclick={() => {
-                  this.setState({ closeAlert: true });
+                  this.setState({ cbDialog: true });
                 }} content="确定跳转?"/>
                 <ToolBar count={2} title="App" onLclick={() => {
-                  this.setState({ closeAlert: false });
+                  this.setState({ cbDialog: false });
                 }} onRclick={() => { console.log('mess'); }}/>
                 <NavBar contents={[<Hello />,
                   <div></div>
