@@ -42,3 +42,9 @@
 .navbarContent {
     position: relative;
 }
+.selected {
+    background-color: #666;
+}
+.unselected {
+    background-color: transparent;
+}
