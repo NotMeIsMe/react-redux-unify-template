@@ -3,6 +3,7 @@ import Hello from '../../components/hello/hello';
 import ToolBar from '../../components/toolbar/toolbar';
 import NavBar from '../../components/navbar/navbar';
 import Simple from '../../components/alert/simple';
+import Tab from '../../components/tab/tab';
 import styles from './home.css';
 
 class Home extends React.Component {
@@ -23,7 +24,9 @@ class Home extends React.Component {
                   this.setState({ cbDialog: false });
                 }} onRclick={() => { console.log('mess'); }}/>
                 <NavBar contents={[<Hello />,
-                  <div></div>
+                  <Tab rData={[{ className: '测试1', arrs: [ <div />, <div /> ] },
+                  { className: '测试2', arrs: [ <div />, <div />, <div /> ] },
+                  { className: '测试3', arrs: [ <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div /> ] }]}/>
                 ]} navcontents={[{
                   ico: require('./home.png'),
                   subtitle: '主页'

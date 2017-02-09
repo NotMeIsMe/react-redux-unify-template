@@ -2,6 +2,33 @@ body {
     padding: 0px;
     margin: 0px;
 }
+
+*::-webkit-scrollbar {
+    width:5px;
+    height:5px;
+}
+*::-webkit-scrollbar-button    {
+    background-color:#eee;
+    height: 10px;
+}
+*::-webkit-scrollbar-track     {
+    background:#FF66D5;
+}
+*::-webkit-scrollbar-track-piece {
+    background:#fff;
+}
+*::-webkit-scrollbar-thumb{
+    background:#43CD80;
+    border-radius:4px;
+}
+*::-webkit-scrollbar-corner {
+    background:#82AFFF;
+}
+*::-webkit-scrollbar-resizer  {
+    background:#FF0BEE;
+}
+
+
 .home {
     margin-top: 50px;
 }
