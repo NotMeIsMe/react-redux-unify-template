@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 // 默认初始化state
 const initState = {
   auth: {
-    user2: {}
+    user3: {}
   },
   test: {}
 };

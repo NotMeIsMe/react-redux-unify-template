@@ -5,7 +5,7 @@ class NavBar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      sindex: 0
+      sindex: 1
     };
   }
   render () {
@@ -19,11 +19,7 @@ class NavBar extends React.Component {
                 {
                   this.props.navcontents.map((obj, k) => {
                     return (
-                        <div onClick={() => {
-                          this.setState({ sindex: k });
-                        }} style={{
-                          backgroundColor: this.state.sindex === k ? '#666' : 'transparent'
-                        }} key={k}>
+                        <div className={ this.state.sindex === k ? styles.selected : styles.unselected } onClick={() => this.setState({ sindex: k }) } key={k}>
                             <img src={obj.ico} alt={obj.subtitle}/>
                             <span>{obj.subtitle}</span>
                         </div>
