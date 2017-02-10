@@ -19,7 +19,9 @@
     color: #444;
     text-decoration: none;
 }
-
+.tabLeftWrap > a:hover {
+    text-decoration: none;
+}
 .tabLeftWrap > a:not(:last-child) {
   border-bottom: 1px solid #eee;
 }

@@ -37,7 +37,7 @@ class Tab extends React.Component {
                   rightComs.flatMap((value, k) =>
                     value.map((value2, k2) => ({ isclass: k2 === 0, classIndex: k, content: value2 }))
                   ).map((value3, k3) =>
-                    <div className={value3.isclass === true && styles.spec} id={k3} key={k3 + 100}>{value3.isclass && <div className={styles.classTitle}>{leftComs[value3.classIndex]}</div>}</div>
+                    <div className={value3.isclass === true && styles.spec} id={value3.isclass && value3.classIndex} key={k3 + 100}>{value3.isclass && <div className={styles.classTitle}>{leftComs[value3.classIndex]}</div>}</div>
                   )
                 }
               </div>
