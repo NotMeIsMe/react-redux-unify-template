@@ -63,6 +63,33 @@ module.exports = {
         amd: 'react-dom',
         umd: 'react-dom'
       }
+    },
+    {
+      'react-router': {
+        root: 'ReactRouter',
+        commonjs2: 'react-router',
+        commonjs: 'react-router',
+        amd: 'react-router',
+        umd: 'react-router'
+      }
+    },
+    {
+      'redux': {
+        root: 'Redux',
+        commonjs2: 'redux',
+        commonjs: 'redux',
+        amd: 'redux',
+        umd: 'redux'
+      }
+    },
+    {
+      'react-redux': {
+        root: 'ReactRedux',
+        commonjs2: 'react-redux',
+        commonjs: 'react-redux',
+        amd: 'react-redux',
+        umd: 'react-redux'
+      }
     }
   ],
   module: {
