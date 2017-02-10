@@ -105,6 +105,15 @@ table {
     border-spacing: 0;
 }
 
+body {
+    font-family:Helvetica;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"] {
+-webkit-appearance: none;
+}
+textarea { -webkit-appearance: none;}
+
 *::-webkit-scrollbar {
     width: 5px;
     height: 5px;

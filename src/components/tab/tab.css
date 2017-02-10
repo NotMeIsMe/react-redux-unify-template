@@ -2,6 +2,7 @@
     overflow: hidden;
     position: relative;
     height: 100%;
+    overflow-x: hidden;
 }
 .tabLeftWrap {
     height: 100%;
@@ -9,6 +10,8 @@
     float: left;
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: #eee;
+    box-shadow: 1px 0px 5px #aaa;
 }
 .tabLeftWrap > a {
     display: inline-block;
@@ -23,7 +26,7 @@
     text-decoration: none;
 }
 .tabLeftWrap > a:not(:last-child) {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #fff;
 }
 .selected {
     border-right: 4px solid #f00;
@@ -55,6 +58,9 @@
 }
 .tabRightWrap > div {
     height: 75px;
+}
+.tabRightWrap > div:not(.spec) {
+    margin: 0px 3px;
 }
 .tabRightWrap > div.spec {
     height: 100px;

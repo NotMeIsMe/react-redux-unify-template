@@ -30,6 +30,10 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'static' }
     ]),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery'
+    // }),
     WebpackIsomorphicTools
   ],
   module: {

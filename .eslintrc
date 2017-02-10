@@ -22,6 +22,8 @@
         "react/jsx-uses-vars": "error"
     },
     "globals": {
-        "WebpackIsomorphicTools": true
+        "WebpackIsomorphicTools": true,
+        "$": true,
+        "jQuery": true
     }
 }

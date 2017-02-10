@@ -18,6 +18,14 @@ class Tab extends React.Component {
       sindex: 0
     };
   }
+  componentDidMount () {
+    // require('./jquery.pin');
+    // $.fn.load = function (callback) { $(window).on('load', callback); };
+    // $(`.${styles.classTitle}`).pin({
+    //   scrollEle: '#tabRightWrap',
+    //   containerSelector: `.${styles.spec}`
+    // });
+  }
   render () {
     const leftComs = []; const rightComs = [];
     this.props.rData.forEach((d, k) => {
@@ -40,7 +48,7 @@ class Tab extends React.Component {
                     <a href={`#${k}`} className={ tabLItemCssL(k) } onClick={() => this.setState({ sindex: k })} key={k}>{value}</a>)
                 }
               </div>
-              <div className={styles.tabRightWrap}>
+              <div className={styles.tabRightWrap} id="tabRightWrap">
                 {
                   rightComs.flatMap((value, k) =>
                     value.map((value2, k2) => ({ isclass: k2 === 0, classIndex: k, content: value2 }))
