@@ -15,12 +15,13 @@ const externals = {
     }
   },
   production: {
+    // not mini version for production in development env
     externals: {
-      react: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js',
-      reactDom: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js',
-      reactRouter: 'https://cdnjs.cloudflare.com/ajax/libs/react-router/3.0.2/react-router.min.js',
-      reactRedux: 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.0.0/react-redux.min.js',
-      redux: 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.6/redux.min.js'
+      react: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js',
+      reactDom: 'https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js',
+      reactRouter: 'https://cdnjs.cloudflare.com/ajax/libs/react-router/3.0.2/react-router.js',
+      reactRedux: 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.0.0/react-redux.js',
+      redux: 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.6/redux.js'
     }
   }
 }[process.env.NODE_ENV];

@@ -7,7 +7,7 @@ class Loading extends React.Component {
       display: (this.props.toClose === undefined || this.props.toClose === false) ? 'block' : 'none'
     }}>
       <div>
-        <img src={require('./ripple.gif')} alt="加载中" />
+        <div className={styles.uilRippleCss} style={{ transform: 'scale(0.6)' }}><div></div><div></div></div>
       </div>
     </div>;
   }

@@ -21,6 +21,9 @@ const initState = {
   auth: {
     user3: {}
   },
+  home: {
+    isloaded: false
+  },
   test: {}
 };
 
