@@ -1,5 +1,7 @@
 import path from 'path';
 import express from 'express';
+import session from 'express-session';
+import bodyParser from 'body-parser';
 import device from 'express-device';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -13,6 +15,13 @@ import config from './config';
 import Html from './template';
 
 const app = express();
+app.use(session({
+  secret: 'dsd823h2heh98r2h9r9299e9ue',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 60000 }
+}));
+app.use(bodyParser.json());
 app.use(device.capture());
 app.use(express.static(path.join(__dirname, '../dist')));
 
