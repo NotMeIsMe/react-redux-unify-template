@@ -16,7 +16,7 @@
     height: 40px;
     line-height: 40px;
     text-align: center;
-    color: #444;
+    color: #555;
     text-decoration: none;
 }
 .tabLeftWrap > a:hover {
@@ -27,7 +27,8 @@
 }
 .selected {
     border-right: 4px solid #f00;
-    background-color: #eee;
+    background:#43CD80;
+    color: #fff !important;
 }
 .unselected {
     border-right: 0px solid #f00;
