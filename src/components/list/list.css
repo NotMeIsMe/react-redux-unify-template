@@ -2,6 +2,7 @@
     margin-top: 28px;
     /*overflow-y: auto;*/
     /*overflow-x: hidden;*/
+    margin-bottom: 55px;
 }
 
 .list > div {
@@ -23,5 +24,6 @@
     width: 40px;
     background-color: #eee;
     border-radius: 20px;
+    margin-left: -18px;
     box-shadow:0 0 10px #666;  
 }

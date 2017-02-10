@@ -5,6 +5,7 @@ class List extends React.Component {
     super(props);
     this.state = {
       lData: [
+            {title: 'x'}, {title: 's'}, {title: 'r'},
             {title: 'x'}, {title: 's'}, {title: 'r'}
       ]};
   }
