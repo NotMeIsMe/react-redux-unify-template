@@ -63,6 +63,15 @@ module.exports = {
         amd: 'react-dom',
         umd: 'react-dom'
       }
+    },
+    {
+      'node-fetch': {
+        root: 'fetch',
+        commonjs2: 'node-fetch',
+        commonjs: 'node-fetch',
+        amd: 'node-fetch',
+        umd: 'node-fetch'
+      }
     }
     // 出现依赖问题, 暂时不cdn处理
     // {

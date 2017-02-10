@@ -18,7 +18,8 @@ const externals = {
     // not mini version for production in development env
     externals: {
       react: 'http://cdn.bootcss.com/react/15.4.2/react.min.js',
-      reactDom: 'http://cdn.bootcss.com/react/15.4.2/react-dom.min.js'
+      reactDom: 'http://cdn.bootcss.com/react/15.4.2/react-dom.min.js',
+      fetch: 'http://cdn.bootcss.com/fetch/2.0.2/fetch.min.js'
       // reactRouter: 'https://cdnjs.cloudflare.com/ajax/libs/react-router/3.0.2/react-router.js',
       // reactRedux: 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.0.0/react-redux.js',
       // redux: 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.4/redux.js'

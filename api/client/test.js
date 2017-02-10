@@ -1,16 +1,10 @@
 
 export function getUser (uid) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({
-        data: {
-          user: {
-            name: '黄建双',
-            age: 24
-          }
-        }
+    fetch('./hello').then(res => res.json())
+      .then(res => {
+        resolve(res);
       });
-    }, 2000);
   });
 }
 

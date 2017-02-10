@@ -14,6 +14,8 @@ import buildRoutes from './routes';
 import config from './config';
 import Html from './template';
 
+import testRouter from '../api/server/test';
+
 const app = express();
 app.use(session({
   secret: 'dsd823h2heh98r2h9r9299e9ue',
@@ -24,6 +26,7 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(device.capture());
 app.use(express.static(path.join(__dirname, '../dist')));
+app.use(testRouter);
 
 // 默认初始化state
 const initState = {
