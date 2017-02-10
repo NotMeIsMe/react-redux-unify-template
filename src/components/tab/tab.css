@@ -29,7 +29,20 @@
     border-right: 4px solid #f00;
     background:#43CD80;
     color: #fff !important;
+    position: relative;
 }
+.selected::after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    right: 0px;
+    width: 4px;
+    border-left: 1px solid #DDDD00;
+    height: 100%;
+    background-color: #f00;
+    font-weight:bold;
+}
+
 .unselected {
     border-right: 0px solid #f00;
 }

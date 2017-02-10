@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './tab.css';
 
+/*eslint-disable*/
 if (!Array.prototype.flatMap) {
   Object.defineProperty(Array.prototype, 'flatMap', {
     value: function(predicate) {
@@ -8,6 +9,7 @@ if (!Array.prototype.flatMap) {
     }
   });
 }
+/*eslint-enable*/
 
 class Tab extends React.Component {
   constructor (props) {
