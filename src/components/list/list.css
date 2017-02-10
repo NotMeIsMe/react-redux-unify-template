@@ -1,0 +1,27 @@
+.list {
+    margin-top: 28px;
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
+}
+
+.list > div {
+    height: 100px;
+    background-color: #eee;
+    position: relative;
+}
+
+.list > div:not(:last-child) {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.list > div > span:first-child {
+    display: inline-block;
+    position: absolute;
+    top: -25px;
+    height: 40px;
+    width: 40px;
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow:0 0 10px #666;  
+}
