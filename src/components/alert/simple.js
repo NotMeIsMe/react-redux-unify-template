@@ -14,8 +14,8 @@ class Simple extends React.Component {
           }
         </div>
         <div>
-          <button onClick={this.props.onLclick}>确定</button>
-          <button onClick={this.props.onRclick}>取消</button>
+          <button onClick={this.props.onLclick}>取消</button>
+          <button onClick={this.props.onRclick}>确定</button>
         </div>
       </div>
     </div>;

@@ -31,7 +31,7 @@ app.use(testRouter);
 // 默认初始化state
 const initState = {
   auth: {
-    user3: {}
+    user: {}
   },
   home: {
     isloaded: false

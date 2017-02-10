@@ -9,7 +9,7 @@ export default (store) => {
     const state = store.getState();
     const user = state.auth && state.auth.user;
     if (!user) {
-      replace('/?');
+      replace('/');
     }
     cb();
   };
