@@ -13,3 +13,5 @@ render((
     <Router history={browserHistory} children={routes} />
   </Provider>
 ), document.getElementById('root'));
+
+// console.log('componentDidMount...');

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Loading from '../components/loading/load';
 import { loaded } from '../redux/home/actions';
-
 import './favicon.ico';
 
 class Index extends React.Component {
@@ -13,7 +12,9 @@ class Index extends React.Component {
 
   componentDidMount () {
     // 加载完毕
-    setTimeout(this.loaded, 4000);
+    // console.log('componentDidMount...');
+    this.loaded();
+    // setTimeout(this.loaded, 4000);
   }
 
   render () {
