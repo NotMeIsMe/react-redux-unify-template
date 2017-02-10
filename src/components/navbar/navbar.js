@@ -5,7 +5,7 @@ class NavBar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      sindex: 1
+      sindex: 0
     };
   }
   render () {

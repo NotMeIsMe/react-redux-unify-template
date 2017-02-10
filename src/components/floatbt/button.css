@@ -1,0 +1,214 @@
+.btWrap, .btWrap > div:first-child > span {
+  -webkit-box-shadow:0 0 10px #666;  
+  -moz-box-shadow:0 0 10px #666;  
+  box-shadow:0 0 10px #666;  
+}
+
+.btWrap {
+    position: fixed;
+    right: 15px;
+    bottom: 60px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #580;
+    opacity:0.7;
+    filter:alpha(opacity=70);
+    background-image:  url(./add.png);
+    background-size: cover;
+}
+
+.btWrap > div:first-child {
+    margin-top: -120px;   
+    margin-left: 5px; 
+    height: 120px;
+    width: 30px;
+    /*background-color: #580;*/
+}
+
+.btWrap > div:first-child > span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #300;
+}
+/**/
+@keyframes btmove
+{
+from {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+    }
+to {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+ }
+}
+
+@-moz-keyframes btmove
+{
+from {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+    }
+to {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+ }
+}
+
+@-webkit-keyframes btmove
+{
+from {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+    }
+to {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+ }
+}
+
+
+@-o-keyframes btmove
+{
+from {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+    }
+to {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+ }
+}
+/**/
+@keyframes btmovebk
+{
+from {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+    }
+to {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+ }
+}
+
+@-moz-keyframes btmovebk
+{
+from {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+    }
+to {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+ }
+}
+
+
+@-webkit-keyframes btmovebk
+{
+from {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+    }
+to {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+ }
+}
+
+
+@-o-keyframes btmovebk
+{
+from {
+        opacity: 1;
+        filter:alpha(opacity=1);
+        transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -webkit-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+    }
+to {
+        opacity: 0;
+        filter:alpha(opacity=0);
+        transform: scale(0.4,0.4);
+        -ms-transform: scale(0.4,0.4);
+        -webkit-transform: scale(0.4,0.4);
+        -o-transform: scale(0.4,0.4);
+        -moz-transform: scale(0.4,0.4);
+ }
+}
