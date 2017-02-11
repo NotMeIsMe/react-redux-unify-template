@@ -14,7 +14,7 @@ import buildRoutes from './routes';
 import config from './config';
 import Html from './template';
 
-import testRouter from '../api/server/test';
+import api from '../api/server/api';
 
 const app = express();
 app.use(session({
@@ -26,7 +26,7 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(device.capture());
 app.use(express.static(path.join(__dirname, '../dist')));
-app.use(testRouter);
+app.use(api.toolsApi);
 
 // 默认初始化state
 const initState = {
@@ -58,11 +58,7 @@ function htmlServerRender (buildRoutes, rdc, req, res, jskey) {
       );
       res.status(200).send(`<!doctype html>\n${renderToString(<Html assets={WebpackIsomorphicTools.assets()} component={component} store={store} />)}`);
     } else {
-      if (!config.isProduction) {
-        res.redirect(301, `http://${config.host}:${config.devPort}/mobile/404.html`);
-      } else {
-        res.status(404).sendFile(path.join(__dirname, '../dist/mobile/404.html'));
-      }
+      res.status(404).sendFile(path.join(__dirname, '../dist/mobile/404.html'));
     }
   });
 }
