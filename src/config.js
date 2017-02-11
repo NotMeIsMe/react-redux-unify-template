@@ -19,10 +19,10 @@ const externals = {
     externals: {
       react: 'http://cdn.bootcss.com/react/15.4.2/react.min.js',
       reactDom: 'http://cdn.bootcss.com/react/15.4.2/react-dom.min.js',
-      fetch: 'http://cdn.bootcss.com/fetch/2.0.2/fetch.min.js'
-      // reactRouter: 'https://cdnjs.cloudflare.com/ajax/libs/react-router/3.0.2/react-router.js',
-      // reactRedux: 'https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.0.0/react-redux.js',
-      // redux: 'https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.4/redux.js'
+      fetch: 'http://cdn.bootcss.com/fetch/2.0.2/fetch.min.js',
+      reactRouter: 'http://cdn.bootcss.com/react-router/3.0.2/ReactRouter.min.js', // 使用高版本的cdn会有问题
+      reactRedux: 'http://cdn.bootcss.com/react-redux/4.0.0/react-redux.min.js',
+      redux: 'http://cdn.bootcss.com/redux/3.0.4/redux.min.js'
     }
   }
 }[process.env.NODE_ENV];
