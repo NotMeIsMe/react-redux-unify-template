@@ -33,8 +33,8 @@ const initState = {
   auth: {
     user: {}
   },
-  home: {
-    isloaded: false
+  root: {
+    isrootLoaded: false
   },
   test: {}
 };
