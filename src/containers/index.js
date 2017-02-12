@@ -36,7 +36,8 @@ class Index extends React.Component {
           this.props.router.goBack();
         }} content="确定跳转?"/>
         <Loading toClose={this.props.isrootLoaded}/>
-        { this.props.children }
+
+        { React.cloneElement(this.props.children, { test: 12 }) }
       </div>
     );
   }
