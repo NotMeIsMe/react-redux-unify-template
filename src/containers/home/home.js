@@ -9,7 +9,7 @@ import styles from './home.css';
 class Home extends React.Component {
   render () {
     return <div className={styles.home}>
-                <NavBar contents={[
+                <NavBar toMargin={this.props.isBarHide} contents={[
                   <div><List /> <FloatBt /></div>,
                   <Tab rData={[
                     { className: '测试1', arrs: [ <div />, <div /> ] },
@@ -26,6 +26,10 @@ class Home extends React.Component {
            </div>;
   }
 }
+
+Home.propTypes = {
+  isBarHide: React.PropTypes.bool
+};
 
 export default Home;
 

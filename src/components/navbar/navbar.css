@@ -6,6 +6,10 @@
     top: 52px;
 }
 
+.clearnavbarWrapMargin {
+    top:2px;
+}
+
 .navbarWrap .navbarBottom {
     position: fixed;
     bottom: 0px;

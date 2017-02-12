@@ -9,7 +9,7 @@ class NavBar extends React.Component {
     };
   }
   render () {
-    return <div className={styles.navbarWrap}>
+    return <div className={`${styles.navbarWrap} ${this.props.toMargin && styles.clearnavbarWrapMargin}`}>
               <div className={styles.navbarContent}>
                 {
                   this.props.contents[this.state.sindex]
@@ -33,7 +33,8 @@ class NavBar extends React.Component {
 
 NavBar.propTypes = {
   contents: React.PropTypes.array,
-  navcontents: React.PropTypes.array
+  navcontents: React.PropTypes.array,
+  toMargin: React.PropTypes.bool.isRequired
 };
 
 export default NavBar;

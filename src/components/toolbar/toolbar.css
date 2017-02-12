@@ -50,3 +50,12 @@
     text-align: center;
     color: #FFF;
 }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+

@@ -3,7 +3,7 @@ import styles from './toolbar.css';
 
 class ToolBar extends React.Component {
   render () {
-    return <div className={styles.toolBarWrap}>
+    return <div className={`${styles.toolBarWrap} ${this.props.toHide ? styles.hide : styles.show}`}>
               <div className={styles.arrows} onClick={this.props.onLclick}>
                 <image className={styles.arrowsPic} src={require('./back.png')}></image>
               </div>
@@ -24,7 +24,8 @@ ToolBar.propTypes = {
   title: React.PropTypes.string,
   onLclick: React.PropTypes.func,
   onRclick: React.PropTypes.func,
-  count: React.PropTypes.number
+  count: React.PropTypes.number,
+  toHide: React.PropTypes.bool
 };
 
 export default ToolBar;

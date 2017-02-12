@@ -10,7 +10,9 @@ class Index extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      cbDialog: true
+      cbDialog: true,
+      toHideBar: false,
+      scrollTop: 0
     };
 
     this.rootLoad = this.props.rootLoad.bind(this);
@@ -23,8 +25,20 @@ class Index extends React.Component {
 
   render () {
     return (
-      <div>
-        <ToolBar count={2} title="App" onLclick={() => {
+      <div onScroll={e => {
+        const scrollTopCurr = e.target.scrollTop;
+        const scrollTop = this.state.scrollTop;
+        const toHideBar = this.state.toHideBar;
+
+        if ((scrollTopCurr - scrollTop) > 0 && !toHideBar) {
+          this.setState({ scrollTop: scrollTopCurr, toHideBar: true });
+        } else if ((scrollTopCurr - scrollTop) < 0 && toHideBar) {
+          this.setState({ scrollTop: scrollTopCurr, toHideBar: false });
+        } else {
+          this.setState({ scrollTop: scrollTopCurr });
+        }
+      }}>
+        <ToolBar toHide={ this.state.toHideBar } count={2} title="App" onLclick={() => {
           this.setState({ cbDialog: false });
         }} onRclick={() => {
           this.props.router.push('/messbox');
@@ -37,7 +51,7 @@ class Index extends React.Component {
         }} content="确定跳转?"/>
         <Loading toClose={this.props.isrootLoaded}/>
 
-        { React.cloneElement(this.props.children, { test: 12 }) }
+        { React.cloneElement(this.props.children, { isBarHide: this.state.toHideBar }) }
       </div>
     );
   }
