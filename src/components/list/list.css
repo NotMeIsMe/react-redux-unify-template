@@ -27,3 +27,11 @@
     margin-left: -18px;
     box-shadow:0 0 10px #666;  
 }
+
+.bisque {
+    background-color: bisque !important;
+}
+
+.lightskyblue {
+    background-color: lightskyblue !important;
+}

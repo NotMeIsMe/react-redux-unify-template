@@ -9,6 +9,8 @@ class NavBar extends React.Component {
     };
   }
   render () {
+    const tabsStyle = k => this.state.sindex === k ? styles.selected : styles.unselected;
+
     return <div className={styles.navbarWrap}>
               <div className={styles.navbarContent}>
                 {
@@ -19,7 +21,7 @@ class NavBar extends React.Component {
                 {
                   this.props.navcontents.map((obj, k) => {
                     return (
-                        <div className={ this.state.sindex === k ? styles.selected : styles.unselected } onClick={() => this.setState({ sindex: k }) } key={k}>
+                        <div className={ tabsStyle(k) } onClick={() => this.setState({ sindex: k }) } key={k}>
                             <img src={obj.ico} alt={obj.subtitle}/>
                             <span>{obj.subtitle}</span>
                         </div>

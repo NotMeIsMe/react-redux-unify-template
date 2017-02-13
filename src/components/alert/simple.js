@@ -3,15 +3,14 @@ import styles from './simple.css';
 
 class Simple extends React.Component {
   render () {
-    return <div className={styles.simple} style={{
+    const wdis = {
       display: (this.props.toClose === undefined || this.props.toClose === false) ? 'block' : 'none'
-    }}>
+    };
+    return <div className={styles.simple} style={ wdis }>
       <div>
         <div>温馨提醒</div>
         <div>
-          {
-            this.props.content
-          }
+          { this.props.content }
         </div>
         <div>
           <button onClick={this.props.onLclick}>取消</button>

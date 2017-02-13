@@ -10,11 +10,13 @@ class List extends React.Component {
       ]};
   }
   render () {
+    const dyeColor = k => (k % 2) === 0 ? styles.bisque : styles.lightskyblue;
+
     return <div className={styles.list}>
                 {
                     this.state.lData.map((s, k) => {
-                      return <div key={k}>{s.title}
-                        <span />
+                      return <div className={ dyeColor(k) } key={k}>{s.title}
+                        <span className={ dyeColor(k) } />
                       </div>;
                     })
                 }
