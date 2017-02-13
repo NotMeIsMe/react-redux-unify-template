@@ -108,9 +108,11 @@
     "eslint-plugin-standard": "^2.0.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.10.0",
+    "node-sass": "^3.4.2",
     "nodemon": "^1.11.0",
     "rimraf": "^2.5.4",
-    "sass-loader": "^5.0.1",
+    "autoprefixer-loader": "^3.1.0",
+    "sass-loader": "^3.1.2",
     "stats-webpack-plugin": "^0.4.3",
     "style-loader": "^0.13.1"
   }
