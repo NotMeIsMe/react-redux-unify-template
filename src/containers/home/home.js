@@ -9,10 +9,13 @@ import styles from './home.css';
 class Home extends React.Component {
   render () {
     return <div className={styles.home}>
-                <NavBar contents={[<div><List /> <FloatBt /></div>,
-                  <Tab rData={[{ className: '测试1', arrs: [ <div />, <div /> ] },
-                  { className: '测试2', arrs: [ <div />, <div />, <div /> ] },
-                  { className: '测试3', arrs: [ <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div /> ] }]}/>
+                <NavBar contents={[
+                  <div><List /> <FloatBt /></div>,
+                  <Tab rData={[
+                    { className: '测试1', arrs: [ <div />, <div /> ] },
+                    { className: '测试2', arrs: [ <div />, <div />, <div /> ] },
+                    { className: '测试3', arrs: [ <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div /> ] }
+                  ]} />
                 ]} navcontents={[{
                   ico: require('./home.png'),
                   subtitle: '主页'

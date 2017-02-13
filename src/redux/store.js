@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import asyncMiddleware from 'redux-async';
+import asyncMiddleware from './middleware/async';
 // import thunk from 'redux-thunk';
 import { composeWithDevTools as composeWithDevToolsDev } from 'redux-devtools-extension';
 import { composeWithDevTools as composeWithDevToolsPro } from 'redux-devtools-extension/logOnlyInProduction';

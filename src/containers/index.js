@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ToolBar from '../components/toolbar/toolbar';
 import Simple from '../components/alert/simple';
 import Loading from '../components/loading/load';
-import { loaded } from '../redux/home/actions';
+import { rootLoad } from '../redux/root/actions';
 import './favicon.ico';
 
 class Index extends React.Component {
@@ -13,14 +13,12 @@ class Index extends React.Component {
       cbDialog: true
     };
 
-    this.loaded = this.props.loaded.bind(this);
+    this.rootLoad = this.props.rootLoad.bind(this);
   }
 
   componentDidMount () {
     // 加载完毕
-    // console.log('componentDidMount...');
-    this.loaded();
-    // setTimeout(this.loaded, 4000);
+    this.rootLoad(true);
   }
 
   render () {
@@ -37,7 +35,7 @@ class Index extends React.Component {
           this.setState({ cbDialog: true });
           this.props.router.goBack();
         }} content="确定跳转?"/>
-        <Loading toClose={this.props.isloaded}/>
+        <Loading toClose={this.props.isrootLoaded}/>
         { this.props.children }
       </div>
     );
@@ -45,19 +43,21 @@ class Index extends React.Component {
 }
 
 Index.propTypes = {
-  children: React.PropTypes.object.isRequired
+  children: React.PropTypes.object.isRequired,
+  rootLoad: React.PropTypes.func,
+  isrootLoaded: React.PropTypes.bool
 };
 
 function mapStateToProps (state) {
-  const home = state.home;
+  const root = state.root;
   return {
-    isloaded: home.isloaded
+    isrootLoaded: root.isrootLoaded
   };
 }
 
 function mapDispatchProps (dispatch) {
   return {
-    loaded: () => dispatch(loaded())
+    rootLoad: bool => dispatch(rootLoad(bool))
   };
 }
 
