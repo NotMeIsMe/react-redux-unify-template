@@ -1,4 +1,5 @@
-import { ROOTLOADED, ROOTNOTLOADED } from './actions';
+import { ROOTLOADED, ROOTNOTLOADED, SHOWTOAST } from './actions';
+import DeadToast from '../../components/toast/toast';
 
 function createReducer (initialState, cases) {
   return (state = initialState, action) => {
@@ -14,5 +15,9 @@ export default createReducer(initialState, {
   },
   [ROOTNOTLOADED] (state, action) {
     return { ...state, isrootLoaded: false };
+  },
+  [SHOWTOAST] (state, action) {
+    DeadToast.makeText('Hello, World!').show();
+    return state;
   }
 });

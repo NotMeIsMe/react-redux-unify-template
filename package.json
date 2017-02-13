@@ -110,6 +110,7 @@
     "file-loader": "^0.10.0",
     "nodemon": "^1.11.0",
     "rimraf": "^2.5.4",
+    "sass-loader": "^5.0.1",
     "stats-webpack-plugin": "^0.4.3",
     "style-loader": "^0.13.1"
   }

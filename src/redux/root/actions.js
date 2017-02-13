@@ -11,3 +11,11 @@ export function rootNotLoad () {
     type: ROOTNOTLOADED
   };
 }
+
+export const SHOWTOAST = 'SHOWTOAST';
+export function showToast (value) {
+  return {
+    type: SHOWTOAST,
+    meta: value
+  };
+}
