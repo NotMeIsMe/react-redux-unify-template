@@ -8,20 +8,20 @@ const join = (rules) => (value, data) => rules.map(rule => rule(value, data)).fi
 export function email (value) {
   // Let's not start a debate on email regex. This is just for an example app!
   if (!isEmpty(value) && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
-    return 'Invalid email address';
+    return '邮箱无效';
   }
 }
 
 export function required (value) {
   if (isEmpty(value)) {
-    return 'Required';
+    return '信息必填';
   }
 }
 
 export function minLength (min) {
   return value => {
     if (!isEmpty(value) && value.length < min) {
-      return `Must be at least ${min} characters`;
+      return `不小于${min}个字符`;
     }
   };
 }
@@ -29,21 +29,21 @@ export function minLength (min) {
 export function maxLength (max) {
   return value => {
     if (!isEmpty(value) && value.length > max) {
-      return `Must be no more than ${max} characters`;
+      return `不大于${max}个字符`;
     }
   };
 }
 
 export function integer (value) {
   if (!Number.isInteger(Number(value))) {
-    return 'Must be an integer';
+    return '需为整数';
   }
 }
 
 export function oneOf (enumeration) {
   return value => {
     if (!~enumeration.indexOf(value)) {
-      return `Must be one of: ${enumeration.join(', ')}`;
+      return `需为${enumeration.join(', ')}之一`;
     }
   };
 }
@@ -52,7 +52,7 @@ export function match (field) {
   return (value, data) => {
     if (data) {
       if (value !== data[field]) {
-        return 'Do not match';
+        return '信息不匹配';
       }
     }
   };

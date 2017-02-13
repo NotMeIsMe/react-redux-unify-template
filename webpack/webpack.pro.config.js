@@ -24,6 +24,7 @@ module.exports = {
   plugins: [
     // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
     new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
@@ -99,6 +100,15 @@ module.exports = {
         commonjs: 'react-redux',
         amd: 'react-redux',
         umd: 'react-redux'
+      }
+    },
+    {
+      'redux-form': {
+        root: 'ReduxForm',
+        commonjs2: 'redux-form',
+        commonjs: 'redux-form',
+        amd: 'redux-form',
+        umd: 'redux-form'
       }
     }
   ],

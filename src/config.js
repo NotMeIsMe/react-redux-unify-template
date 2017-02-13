@@ -22,7 +22,8 @@ const externals = {
       fetch: 'http://cdn.bootcss.com/fetch/2.0.2/fetch.min.js',
       reactRouter: 'http://cdn.bootcss.com/react-router/3.0.2/ReactRouter.min.js', // 使用高版本的cdn会有问题
       reactRedux: 'http://cdn.bootcss.com/react-redux/4.0.0/react-redux.min.js',
-      redux: 'http://cdn.bootcss.com/redux/3.0.4/redux.min.js'
+      redux: 'http://cdn.bootcss.com/redux/3.0.4/redux.min.js',
+      reduxForm: 'http://cdn.bootcss.com/redux-form/6.4.3/redux-form.min.js'
     }
   }
 }[process.env.NODE_ENV];

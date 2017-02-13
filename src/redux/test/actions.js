@@ -5,12 +5,12 @@ import { ROOTLOADED, ROOTNOTLOADED } from '../root/actions';
 export const GET_USERS_REQUEST = 'GET_USERS_REQUEST';
 export const GET_USERS_SUCCESS = 'GET_USERS_SUCCESS';
 export const GET_USERS_FAILURE = 'GET_USERS_FAILURE';
-export const loadUser = uid => {
+export const userLogin = values => {
   return {
     types: [ [ GET_USERS_REQUEST, ROOTNOTLOADED ], [ GET_USERS_SUCCESS, ROOTLOADED ], [ GET_USERS_FAILURE, ROOTLOADED ] ],
     payload: {
-      user: api.getUser(uid).then(response => response.data.user),
-      uid
+      user: api.getUser(values).then(response => response.data.user),
+      uid: 0
     }
   };
 };

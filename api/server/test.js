@@ -1,7 +1,9 @@
 const router = require('express').Router;
 const toolsApi = router();
 
-toolsApi.get('/hello', (req, res) => {
+toolsApi.post('/hello', (req, res) => {
+  console.log(req.body);
+
   const data = {
     data: {
       user: {
