@@ -57,7 +57,7 @@ function mapStateToProps (state) {
 
 function mapDispatchProps (dispatch) {
   return {
-    rootLoad: bool => dispatch(rootLoad(bool))
+    rootLoad: bool => dispatch(rootLoad())
   };
 }
 

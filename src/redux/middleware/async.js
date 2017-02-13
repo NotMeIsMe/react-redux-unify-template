@@ -1,3 +1,5 @@
+// 修改async-redux, 可以dis嵌套action
+
 const isPromise = obj => obj && typeof obj.then === 'function';
 const hasPromiseProps = obj => Object.keys(obj).some(key => isPromise(obj[key]));
 
@@ -40,11 +42,16 @@ export default function promisePropsMiddleware () {
         nextAction.meta = { ...nextAction.meta, ...action.meta };
       });
     }
+    // 判断是否嵌套action
+    pendingAction.type instanceof Array ? pendingAction.type.map(type => ({ ...pendingAction, type: type })).forEach(action => next(action))
+      : next(pendingAction);
 
-    next(pendingAction);
     return resolveProps(payload).then(
-      results => next({ ...successAction, payload: results }),
-      error => next({ ...failureAction, payload: error })
+      results => successAction.type instanceof Array ? successAction.type.map(type => ({ ...successAction, type: type, payload: results })).forEach(action => next(action))
+        : next({ ...successAction, payload: results })
+      ,
+      error => failureAction.type instanceof Array ? failureAction.type.map(type => ({ ...failureAction, type: type, payload: error })).forEach(action => next(action))
+        : next({ ...failureAction, payload: error })
     );
   };
 }

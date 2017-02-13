@@ -10,6 +10,6 @@ function createReducer (initialState, cases) {
 const initialState = {};
 export default createReducer(initialState, {
   [LOADED] (state, action) {
-    return { ...state, isloaded: true };
+    return { ...state, isloaded: action.isloaded };
   }
 });

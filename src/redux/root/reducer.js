@@ -1,4 +1,4 @@
-import { ROOTLOADED } from './actions';
+import { ROOTLOADED, ROOTNOTLOADED } from './actions';
 
 function createReducer (initialState, cases) {
   return (state = initialState, action) => {
@@ -10,7 +10,9 @@ function createReducer (initialState, cases) {
 const initialState = {};
 export default createReducer(initialState, {
   [ROOTLOADED] (state, action) {
-    const isfinished = action.isfinished;
-    return { ...state, isrootLoaded: isfinished };
+    return { ...state, isrootLoaded: true };
+  },
+  [ROOTNOTLOADED] (state, action) {
+    return { ...state, isrootLoaded: false };
   }
 });

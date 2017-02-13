@@ -15,10 +15,12 @@ export default createReducer(initialState, {
     return { isFetching: true, uid };
   },
   [GET_USERS_SUCCESS] (state, action) {
+    console.log(action);
     const { uid, user } = action.payload;
     return { isFetching: false, user, uid };
   },
   [GET_USERS_FAILURE] (state, action) {
+    console.log(action);
     return { isFetching: false, errorMessage: action.payload.message };
   }
 });

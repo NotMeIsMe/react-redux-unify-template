@@ -1,5 +1,5 @@
 import React from 'react';
-// import Hello from '../../components/hello/hello';
+import Hello from '../../components/hello/hello';
 import NavBar from '../../components/navbar/navbar';
 import Tab from '../../components/tab/tab';
 import FloatBt from '../../components/floatbt/button';
@@ -15,13 +15,17 @@ class Home extends React.Component {
                     { className: '测试1', arrs: [ <div />, <div /> ] },
                     { className: '测试2', arrs: [ <div />, <div />, <div /> ] },
                     { className: '测试3', arrs: [ <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div />, <div /> ] }
-                  ]} />
+                  ]} />,
+                  <div><Hello /></div>
                 ]} navcontents={[{
                   ico: require('./home.png'),
                   subtitle: '主页'
                 }, {
                   ico: require('./service.png'),
                   subtitle: '发现'
+                }, {
+                  ico: require('./service.png'),
+                  subtitle: '测试'
                 }]}/>
            </div>;
   }

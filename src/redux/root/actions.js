@@ -1,7 +1,13 @@
 export const ROOTLOADED = 'ROOTLOADED';
-export function rootLoad (bool) {
+export const ROOTNOTLOADED = 'ROOTNOTLOADED';
+export function rootLoad () {
   return {
-    type: ROOTLOADED,
-    isfinished: bool
+    type: ROOTLOADED
+  };
+}
+
+export function rootNotLoad () {
+  return {
+    type: ROOTNOTLOADED
   };
 }
