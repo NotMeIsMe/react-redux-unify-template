@@ -3,10 +3,9 @@ import styles from './simple.css';
 
 class Simple extends React.Component {
   render () {
-    const wdis = {
-      display: (this.props.toClose === undefined || this.props.toClose === false) ? 'block' : 'none'
-    };
-    return <div className={styles.simple} style={ wdis }>
+    const wdis = this.props.toClose !== false ? styles.hide : styles.show;
+
+    return <div className={`${styles.simple} ${wdis}`}>
       <div>
         <div>温馨提醒</div>
         <div>

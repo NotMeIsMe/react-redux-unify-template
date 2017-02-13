@@ -1,3 +1,5 @@
+// from react-redux-universal-hot-example-master
+
 const isEmpty = value => value === undefined || value === null || value === '';
 /*eslint-disable*/
 const join = (rules) => (value, data) => rules.map(rule => rule(value, data)).filter(error => !!error)[0 /* first error */ ];
