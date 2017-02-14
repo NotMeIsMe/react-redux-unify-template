@@ -17,6 +17,7 @@ export default createReducer(initialState, {
     return { ...state, isrootLoaded: false };
   },
   [SHOWTOAST] (state, action) {
+    console.log('toast');
     DeadToast.makeText('Hello, World!').show();
     return state;
   }

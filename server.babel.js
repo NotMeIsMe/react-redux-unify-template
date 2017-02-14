@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-const packageJson = fs.readFileSync('./package.json');
+const babelrc = fs.readFileSync('./.babelrc');
 let config;
 try {
-  config = JSON.parse(packageJson).babel;
+  config = JSON.parse(babelrc);
 } catch (err) {
   console.error('ERROR IN: babel-register');
   console.error(err);
