@@ -15,13 +15,22 @@ const resolveProps = obj => {
   });
 };
 
+const nestActionSpread = next => (action, attach) => {
+  const typeSpread = obj => obj instanceof Object ? obj : undefined;
+  // 判断是否嵌套action
+  action.type instanceof Array
+    ? action.type
+    .map(type => ({ ...action, type: typeSpread(type) && type.type || type, ...typeSpread(type), ...attach }))
+    .forEach(action => next(action))
+    : next({ ...action, type: typeSpread(action.type) && action.type.type || action.type, ...typeSpread(action.type), ...attach });
+};
+
 const getNonPromiseProperties = obj => {
   return Object.keys(obj).filter(key => !isPromise(obj[key])).reduce((acc, key) => {
     acc[key] = obj[key];
     return acc;
   }, {});
 };
-
 
 export default function promisePropsMiddleware () {
   return next => action => {
@@ -42,16 +51,14 @@ export default function promisePropsMiddleware () {
         nextAction.meta = { ...nextAction.meta, ...action.meta };
       });
     }
+
     // 判断是否嵌套action
-    pendingAction.type instanceof Array ? pendingAction.type.map(type => ({ ...pendingAction, type: type })).forEach(action => next(action))
-      : next(pendingAction);
+    nestActionSpread(next)(pendingAction, undefined);
 
     return resolveProps(payload).then(
-      results => successAction.type instanceof Array ? successAction.type.map(type => ({ ...successAction, type: type, payload: results })).forEach(action => next(action))
-        : next({ ...successAction, payload: results })
+      results => nestActionSpread(next)(successAction, { payload: results })
       ,
-      error => failureAction.type instanceof Array ? failureAction.type.map(type => ({ ...failureAction, type: type, payload: error })).forEach(action => next(action))
-        : next({ ...failureAction, payload: error })
+      error => nestActionSpread(next)(failureAction, { payload: error })
     );
   };
 }
