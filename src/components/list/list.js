@@ -16,8 +16,8 @@ class List extends React.Component {
                 {
                     this.state.lData.map((s, k) => {
                       return <div className={ dyeColor(k) } key={k}>{s.title}
-                        <span className={ dyeColor(k) } />
-                      </div>;
+                                <span className={ dyeColor(k) } />
+                             </div>;
                     })
                 }
            </div>;

@@ -28,7 +28,7 @@ class Index extends React.Component {
           this.setState({ cbDialog: false });
         }} onRclick={() => {
           this.props.router.push('/messbox');
-        }}/>
+        }} showMess={ !(this.props.children.type.name === 'Dialogue')}/>
         <Simple toClose={this.state.cbDialog} onLclick={() => {
           this.setState({ cbDialog: true });
         }} onRclick={() => {
