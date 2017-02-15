@@ -1,5 +1,6 @@
 ##react-redux-unify-template
 ![image](https://github.com/2637309949/react-redux-unify-template/blob/master/shot/home.png?raw=true)
+![image](https://github.com/2637309949/react-redux-unify-template/blob/master/shot/dialogue.png?raw=true)  
 
 ####根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
 
