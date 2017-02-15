@@ -1,8 +1,9 @@
 # react-redux-unify-template
 
-**根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
+##根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
+
+###依赖: 
 ```
-依赖: 
     1.修改redux-async支持嵌套action(redux-async源码可以看看https://www.npmjs.com/package/redux-async) 
 主要: 
 const nestActionSpread = next => (action, attach) => { 
@@ -14,7 +15,10 @@ const nestActionSpread = next => (action, attach) => {
     .forEach(action => next(action)) 
     : next({ ...action, type: typeSpread(action.type) && action.type.type || action.type, ...typeSpread(action.type), ...attach }); 
 }; 
-(1)在redux-async基础上支持多个action 
+```
+
+```
+####(1)在redux-async基础上支持多个action 
 例子: 
 export const userLogin = values => { 
   return { 
