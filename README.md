@@ -6,10 +6,9 @@
     
 ####根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
 ####主要命令  
-####1.
-####1."npm run eslint" check语法vscode
-####2."npm run dev" 开发环境热加载
-####3."npm run pro" 生产
+####1.npm run eslint check语法vscode
+####2.npm run dev    开发环境热加载
+####3.npm run pro    生产
   
   
   

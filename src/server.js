@@ -58,7 +58,7 @@ function htmlServerRender (buildRoutes, rdc, req, res, jskey) {
       );
       res.status(200).send(`<!doctype html>\n${renderToString(<Html assets={WebpackIsomorphicTools.assets()} component={component} store={store} />)}`);
     } else {
-      res.status(404).sendFile(path.join(__dirname, '../dist/mobile/404.html'));
+      res.status(404).sendFile(path.join(__dirname, '../dist/404.html'));
     }
   });
 }
