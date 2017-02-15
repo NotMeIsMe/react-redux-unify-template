@@ -1,10 +1,10 @@
 ##react-redux-unify-template
 
-##根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
+####根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
 
-###依赖: 
-###1.修改redux-async支持嵌套action(redux-async源码可以看看https://www.npmjs.com/package/redux-async) 
-主要: 
+####依赖: 
+####1.修改redux-async支持嵌套action(redux-async源码可以看看https://www.npmjs.com/package/redux-async) 
+####主要: 
 ```
 const nestActionSpread = next => (action, attach) => { 
   const typeSpread = obj => obj instanceof Object ? obj : undefined; 
@@ -43,3 +43,37 @@ export default createReducer(initialState, {
   } 
 });
 ```
+####2.redux-form支持表单在redux中的统一管理
+####主要: 
+####在hello组件测试中用到
+```
+class ContactForm extends Component {
+  render () {
+    const { handleSubmit } = this.props;
+    const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
+      <div>
+        <label>{label}</label>
+        <div>
+          <input {...input} placeholder={label} type={type}/>
+          {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+        </div>
+      </div>
+    );
+    return (
+      <form onSubmit={handleSubmit}>
+        <div>
+          <Field name="firstName" component={ renderField } type="text" label="First Name"/>
+        </div>
+        <div>
+          <Field name="lastName" component={ renderField } type="text" label="Last Name"/>
+        </div>
+        <div>
+          <Field name="email" component={ renderField } type="email" label="Email"/>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+}
+```  
+
