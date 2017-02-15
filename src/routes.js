@@ -2,6 +2,7 @@ import { Route, IndexRoute } from 'react-router';
 import React from 'react';
 import Home from './containers/home/home';
 import Index from './containers/index';
+import Dialogue from './containers/dialogue/dialogue';
 import MessBox from './containers/messbox/messbox.js';
 
 export default (store) => {
@@ -20,6 +21,7 @@ export default (store) => {
               <Route onEnter={requireLogin}>
                 <Route path="messbox" component={MessBox}/>
               </Route>
+              <Route path="test" component={Dialogue}/>
           </Route>;
 };
 

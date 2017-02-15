@@ -1,0 +1,62 @@
+.dialogue {
+    
+}
+
+.dialogue > div:first-child {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #934;
+    z-index: 100;
+}
+
+.dialogue > div:nth-child(2) {
+    width: 100%;
+    position: fixed;
+    top: 50px;
+    bottom: 50px;
+    left: 0px;
+    background-color: #444;
+}
+
+.dialogue > div:last-child {
+    height: 250px;
+    width: 100%;
+    position: fixed;
+    bottom: -200px;
+    left: 0px;
+    z-index: 100;
+}
+
+.dialogue > div:last-child > div:first-child {
+    height: 50px;
+}
+.dialogue > div:last-child > div:first-child > span:first-child,
+.dialogue > div:last-child > div:first-child > span:last-child {
+    width: 20%;
+    background-color: #f0f;
+}
+.dialogue > div:last-child > div:first-child > span:nth-child(2) {
+    width: 60%;
+}
+
+.dialogue > div:last-child > div:first-child > span:nth-child(2) > input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    line-height: 50px;
+    border: none;
+}
+
+.dialogue > div:last-child > div:last-child {
+    height: 100%;
+    background: aliceblue;
+}
+
+.dialogue > div:last-child > div:first-child > span {
+    display: inline-block;
+    height: 100%;
+    float: left;
+}
