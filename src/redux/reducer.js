@@ -12,5 +12,3 @@ export default combineReducers({
   test: TestReducer,
   form: formReducer
 });
-
-
