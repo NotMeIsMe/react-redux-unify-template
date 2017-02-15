@@ -8,16 +8,19 @@ class Dialogue extends React.Component {
       test: [
         {
           text: '明天我要回美国',
+          name: '小明',
           from: '',
           to: '',
           date: ''
         }, {
           text: 'ok',
+          name: '小明',
           from: '',
           to: '',
           date: ''
         }, {
           text: 'ok',
+          name: '小明',
           from: '',
           to: '',
           date: ''
@@ -39,7 +42,7 @@ class Dialogue extends React.Component {
                     return (
                       <div className={showBoxInvert(k)} key={k}>
                         <span></span>
-                        <span>{d.text}</span>
+                        <span data-name={d.name}>{d.text}</span>
                       </div>);
                   })
                 }

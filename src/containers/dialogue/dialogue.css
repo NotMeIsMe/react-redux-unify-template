@@ -26,13 +26,15 @@
 
 .dialogue > div:nth-child(2) > div {
     min-height: 50px;
+    overflow: hidden;
+    position: relative;
+    padding: 5px 10px 5px 10px;
 }
 
 .dialogue > div:nth-child(2) > div:not(.showBoxInvert) > span,
 .dialogue > div:nth-child(2) > div.showBoxInvert > span {
     display: inline-block;
     position: relative;
-    margin: 10px;
 }
 .dialogue > div:nth-child(2) > div:not(.showBoxInvert) > span {
     float: left;
@@ -41,23 +43,48 @@
     float: right;
 }
 .dialogue > div:nth-child(2) > div > span:first-child {
-    height: 48px;
-    width: 48px;
-    border-radius: 24px;
-    -webkit-box-shadow:0 0 10px #666;  
-    -moz-box-shadow:0 0 10px #666;  
-    box-shadow:0 0 10px #666;
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+    -webkit-box-shadow:0 0 10px #aaa;
+    -moz-box-shadow:0 0 10px #aaa;
+    box-shadow:0 0 10px #aaa;
+}
+.dialogue > div:nth-child(2) > div > span:last-child {
+    min-height: 44px;
+    max-width: 75%;
+    padding: 0px 10px 0px 10px;
+    min-width: 10%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 44px;
+    color: #333;
+    box-shadow:0 0 10px #eee;
 }
 
-.dialogue > div:nth-child(2) > div > span:last-child {
-    min-height: 50px;
-    width: 70%;
-    border: 1px solid #aaa;
-    border-radius: 8px;
-    text-align: center;
-    line-height: 50px;
-    color: #333;
-    box-shadow:0 0 10px #bbb;
+.dialogue > div:nth-child(2) > div:not(.showBoxInvert) > span:last-child:before,
+.dialogue > div:nth-child(2) > div.showBoxInvert > span:last-child:before {
+    content: attr(data-name);
+    position: absolute;
+    display: inline-block;
+    line-height: 20px;
+    text-align: left;
+    top: -20px;
+    font-size: xx-small;
+    color: #666;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.dialogue > div:nth-child(2) > div:not(.showBoxInvert) > span:last-child:before {
+    left: 0px;
+}
+.dialogue > div:nth-child(2) > div.showBoxInvert > span:last-child:before {
+    right: 0px;
 }
 
 .dialogue > div:nth-child(2) > div:not(.showBoxInvert) > span:last-child:after,
