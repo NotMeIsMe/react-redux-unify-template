@@ -20,8 +20,8 @@
     bottom: 38px;
     left: 0px;
     background-color: #fff;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .dialogue > div:nth-child(2) > div {
@@ -51,7 +51,7 @@
 
 .dialogue > div:nth-child(2) > div > span:last-child {
     min-height: 50px;
-    width: 270px;
+    width: 70%;
     border: 1px solid #aaa;
     border-radius: 8px;
     text-align: center;
