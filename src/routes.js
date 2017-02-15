@@ -20,8 +20,8 @@ export default (store) => {
               <IndexRoute component={Home} />
               <Route onEnter={requireLogin}>
                 <Route path="messbox" component={MessBox}/>
+                <Route path="dialogue" component={Dialogue}/>
               </Route>
-              <Route path="test" component={Dialogue}/>
           </Route>;
 };
 
