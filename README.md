@@ -2,8 +2,17 @@
 ![image](https://github.com/2637309949/react-redux-unify-template/blob/master/shot/home.png?raw=true)
 ![image](https://github.com/2637309949/react-redux-unify-template/blob/master/shot/dialogue.png?raw=true)  
 
-####根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
 
+    
+####根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
+####主要命令  
+####1.
+####1."npm run eslint" check语法vscode
+####2."npm run dev" 开发环境热加载
+####3."npm run pro" 生产
+  
+  
+  
 ####依赖: 
 ####1.修改redux-async支持嵌套action(redux-async源码可以看看https://www.npmjs.com/package/redux-async) 
 ####主要: 
