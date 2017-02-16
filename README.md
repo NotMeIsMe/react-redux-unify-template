@@ -6,12 +6,11 @@
     
 ####根据自己的经验集成redux, reactjs等mobie h5和普通h5网站 
 ####主要命令  
-####1.npm run eslint check语法vscode
-####2.npm run dev    开发环境热加载
-####3.npm run pro    生产
-  
-  
-  
+####(1).npm run eslint check语法vscode
+####(2).npm run dev    开发环境热加载
+####(3).npm run pro    生产
+
+
 ####依赖: 
 ####1.修改redux-async支持嵌套action(https://www.npmjs.com/package/redux-async)
 ####主要: 
@@ -21,9 +20,19 @@ const nestActionSpread = next => (action, attach) => {
   // 判断是否嵌套action 
   action.type instanceof Array 
     ? action.type 
-    .map(type => ({ ...action, type: typeSpread(type) && type.type || type, ...typeSpread(type), ...attach })) 
+    .map(type => ({
+        ...action,
+        type: typeSpread(type) && type.type || type,
+        ...typeSpread(type),
+        ...attach
+    })) 
     .forEach(action => next(action)) 
-    : next({ ...action, type: typeSpread(action.type) && action.type.type || action.type, ...typeSpread(action.type), ...attach }); 
+    : next({
+        ...action,
+        type: typeSpread(action.type) && action.type.type || action.type,
+        ...typeSpread(action.type),
+        ...attach
+    }); 
 }; 
 ```
 ####(1)在redux-async基础上支持多个action 
