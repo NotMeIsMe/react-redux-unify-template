@@ -13,7 +13,7 @@
   
   
 ####依赖: 
-####1.修改redux-async支持嵌套action(redux-async源码可以看看https://www.npmjs.com/package/redux-async) 
+####1.修改redux-async(https://www.npmjs.com/package/redux-async)支持嵌套action
 ####主要: 
 ```
 const nestActionSpread = next => (action, attach) => { 
@@ -86,4 +86,27 @@ class ContactForm extends Component {
   }
 }
 ```  
+####2.redux-router支持用户权限
+####这里只是简单判断user字段, 具体的可以展开
+```
+export default (store) => {
+  const requireLogin = (nextState, replace, cb) => {
+    const state = store.getState();
+    const user = state.auth && state.auth.user;
+    if (!user) {
+      replace('/');
+    }
+    cb();
+  };
+  // onEnter 的使用技巧
+  // https://github.com/ReactTraining/react-router/blob/master/docs/API.md
+  return <Route path="/" component={Index}>
+              <IndexRoute component={Home} />
+              <Route onEnter={requireLogin}>
+                <Route path="messbox" component={MessBox}/>
+                <Route path="dialogue" component={Dialogue}/>
+              </Route>
+          </Route>;
+};
 
+```
