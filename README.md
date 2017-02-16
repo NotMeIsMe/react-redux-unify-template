@@ -13,7 +13,7 @@
   
   
 ####依赖: 
-####1.修改redux-async(https://www.npmjs.com/package/redux-async)支持嵌套action
+####1.修改redux-async支持嵌套action(https://www.npmjs.com/package/redux-async)
 ####主要: 
 ```
 const nestActionSpread = next => (action, attach) => { 
@@ -31,7 +31,11 @@ const nestActionSpread = next => (action, attach) => {
 ```
 export const userLogin = values => { 
   return { 
-    types: [ [ GET_USERS_REQUEST, ROOTNOTLOADED ], [ GET_USERS_SUCCESS, ROOTLOADED, { type: SHOWTOAST, value: '加载成功' } ], [ GET_USERS_FAILURE, ROOTLOADED ] ], 
+    types: [
+      [ GET_USERS_REQUEST, ROOTNOTLOADED ],
+      [ GET_USERS_SUCCESS, ROOTLOADED, { type: SHOWTOAST, value: '加载成功' } ],
+      [ GET_USERS_FAILURE, ROOTLOADED ]
+    ], 
     payload: { 
       user: api.getUser(values).then(response => response.data.user), 
       uid: 0 
@@ -86,7 +90,7 @@ class ContactForm extends Component {
   }
 }
 ```  
-####2.redux-router支持用户权限
+####3.redux-router支持用户权限
 ####这里只是简单判断user字段, 具体的可以展开
 ```
 export default (store) => {
